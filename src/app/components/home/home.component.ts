@@ -25,8 +25,12 @@ export class HomeComponent {
   ngDoCheck() {
     if (this.searchQuery)
       this.filtered = this.todoArr.filter((filteredD) => {
-        filteredD.userName?.toLowerCase().includes(this.searchQuery);
+        console.log(filteredD);
+        filteredD.userName
+
+          ?.toLowerCase()
+          .includes(this.searchQuery.toLowerCase());
+        console.log(this.filteredUsers);
       });
-    console.log(this.filteredUsers);
   }
 }
