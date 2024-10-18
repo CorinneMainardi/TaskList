@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { iUsers } from '../interfaces/i-users';
 import { iTodo } from '../interfaces/i-todo';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -838,17 +839,14 @@ export class UsersService {
       };
     });
   }
-  // searchTodosByUserName(usersWithToDo: iUsers[], query: string): iUsers[] {
-  //   const lowerCaseQuery = query.toLowerCase();
+  filterUsers(query: string): iUsers[] {
+    const queryLower = query.toLowerCase();
+    return this.usersArr.filter(
+      (user) =>
+        user.firstName.toLowerCase().includes(queryLower) ||
+        user.lastName.toLowerCase().includes(queryLower)
+    );
+  }
 
-  //   // Filtra gli utenti in base alla query
-  //   return usersWithToDo.filter((user) => {
-  //     const fullName = `${user.firstName.toLowerCase()} ${user.lastName.toLowerCase()}`;
-  //     return (
-  //       user.firstName.toLowerCase().includes(lowerCaseQuery) ||
-  //       user.lastName.toLowerCase().includes(lowerCaseQuery) ||
-  //       fullName.includes(lowerCaseQuery)
-  //     );
-  //   });
-  // }
+  searchedUser$ = new BehaviorSubject<string>('');
 }

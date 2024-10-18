@@ -913,14 +913,14 @@ export class TodosService {
     return this.toDoArr;
   }
 
-  searchQuery: string = '';
-  filteredTodos: iTodo[] = [];
-  search() {
-    let toDoArrsearch = this.toDoArr.filter((todo) =>
-      todo.todo.toLowerCase().includes(this.searchQuery.toLowerCase())
-    );
-    this.filteredTodos = toDoArrsearch;
-  }
+  // searchQuery: string = '';
+  // filteredTodos: iTodo[] = [];
+  // search() {
+  //   let toDoArrsearch = this.toDoArr.filter((todo) =>
+  //     todo.todo.toLowerCase().includes(this.searchQuery.toLowerCase())
+  //   );
+  //   this.filteredTodos = toDoArrsearch;
+  // }
 
   tasksDoneArr: iTodo[] = [];
   getTaskDone() {

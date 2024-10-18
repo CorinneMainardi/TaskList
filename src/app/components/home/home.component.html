@@ -5,9 +5,15 @@
 
   <div class="container">
     <div class="row">
+      @if(searchQuery){
+      <div class="" col-12 col-md-4 *ngFor="let todo of filtered">
+        <app-card [todo]="todo"></app-card>
+      </div>
+      }@else {
       <div class="" col-12 col-md-4 *ngFor="let todo of todoArr">
         <app-card [todo]="todo"></app-card>
       </div>
+      }
     </div>
   </div>
 </section>

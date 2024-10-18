@@ -47,6 +47,17 @@
           >
         </li>
       </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Cerca utente"
+          [(ngModel)]="searchQuery"
+          name="search"
+          (keyup)="search()"
+        />
+        <button class="btn btn-outline-white" type="submit">Search</button>
+      </form>
     </div>
   </div>
 </nav>
