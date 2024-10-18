@@ -18,11 +18,11 @@ export class HomeComponent {
   constructor(private toDoSvc: TodosService, private usersSvc: UsersService) {}
   ngOnInit() {
     this.todoArr = this.toDoSvc.toDoArr;
-  }
-  ngDoCheck() {
     this.usersSvc.searchedUser$.subscribe((string) => {
       this.searchQuery = string;
     });
+  }
+  ngDoCheck() {
     if (this.searchQuery)
       this.filtered = this.todoArr.filter((filteredD) => {
         console.log(filteredD.userName);

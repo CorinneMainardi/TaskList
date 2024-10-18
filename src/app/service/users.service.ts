@@ -839,14 +839,14 @@ export class UsersService {
       };
     });
   }
-  filterUsers(query: string): iUsers[] {
-    const queryLower = query.toLowerCase();
-    return this.usersArr.filter(
-      (user) =>
-        user.firstName.toLowerCase().includes(queryLower) ||
-        user.lastName.toLowerCase().includes(queryLower)
-    );
-  }
+  // filterUsers(query: string): iUsers[] {
+  //   const queryLower = query.toLowerCase();
+  //   return this.usersArr.filter(
+  //     (user) =>
+  //       user.firstName.toLowerCase().includes(queryLower) ||
+  //       user.lastName.toLowerCase().includes(queryLower)
+  //   );
+  // }
 
   searchedUser$ = new BehaviorSubject<string>('');
 }
