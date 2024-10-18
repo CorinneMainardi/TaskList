@@ -1,0 +1,13 @@
+<section class="home">
+  <h1>
+    In questa pagina troverai i task da portare a termine e quelli già eseguiti
+  </h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="" col-12 col-md-4 *ngFor="let todo of todoArr">
+        <app-card [todo]="todo"></app-card>
+      </div>
+    </div>
+  </div>
+</section>

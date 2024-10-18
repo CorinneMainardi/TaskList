@@ -1,0 +1,30 @@
+<div class="card">
+  <img [src]="todo.image" class="card-img-top" alt="{{ todo.image }}" />
+
+  <div class="card-body">
+    <h5 class="card-title">{{ todo.id }}</h5>
+    <p class="card-text">
+      {{ todo.todo }}
+    </p>
+    <p class="card-text">
+      {{ todo.userName }}
+    </p>
+    <div [ngClass]="todo.completed ? 'completed' : 'uncompleted'">
+      <input
+        type="checkbox"
+        name="isCompleted"
+        id="isCompleted"
+        [(ngModel)]="todo.completed"
+      />
+      <span>
+        @if(todo.completed){
+        <span>Task completato <i class="check bi bi-check-lg"></i></span>
+        } @else{<span>
+          Task da completare
+          <i class="cross bi bi-x-circle"></i>
+        </span>
+        }
+      </span>
+    </div>
+  </div>
+</div>

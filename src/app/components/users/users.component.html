@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-md-4" *ngFor="let user of userArr">
+      <h5>{{ user.firstName }} {{ user.lastName }}</h5>
+      <!-- Mostra il nome dell'utente -->
+      <img [src]="user.image" class="img-fluid" alt="{{ user.firstName }}" />
+      <!-- Immagine dell'utente -->
+
+      <div *ngIf="hasToDos(user); else noTasks">
+        <app-card *ngFor="let todo of user.toDo" [todo]="todo"></app-card>
+      </div>
+
+      <ng-template #noTasks>
+        <p>Non ci sono compiti per questo utente.</p>
+        <!-- Messaggio alternativo -->
+      </ng-template>
+    </div>
+  </div>
+</div>
