@@ -18,19 +18,21 @@ export class HomeComponent {
   constructor(private toDoSvc: TodosService, private usersSvc: UsersService) {}
   ngOnInit() {
     this.todoArr = this.toDoSvc.toDoArr;
+  }
+  ngDoCheck() {
     this.usersSvc.searchedUser$.subscribe((string) => {
       this.searchQuery = string;
     });
-  }
-  ngDoCheck() {
     if (this.searchQuery)
       this.filtered = this.todoArr.filter((filteredD) => {
-        console.log(filteredD);
-        filteredD.userName
-
-          ?.toLowerCase()
-          .includes(this.searchQuery.toLowerCase());
-        console.log(this.filteredUsers);
+        console.log(filteredD.userName);
+        console.log(this.searchQuery);
+        if (filteredD.userName) {
+          filteredD.userName
+            .toLowerCase()
+            .includes(this.searchQuery.toLowerCase());
+          // console.log(this.filteredUsers);
+        }
       });
   }
 }
