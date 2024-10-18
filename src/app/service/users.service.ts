@@ -838,17 +838,17 @@ export class UsersService {
       };
     });
   }
-  searchTodosByUserName(usersWithToDo: iUsers[], query: string): iUsers[] {
-    const lowerCaseQuery = query.toLowerCase();
+  // searchTodosByUserName(usersWithToDo: iUsers[], query: string): iUsers[] {
+  //   const lowerCaseQuery = query.toLowerCase();
 
-    // Filtra gli utenti in base alla query
-    return usersWithToDo.filter((user) => {
-      const fullName = `${user.firstName.toLowerCase()} ${user.lastName.toLowerCase()}`;
-      return (
-        user.firstName.toLowerCase().includes(lowerCaseQuery) ||
-        user.lastName.toLowerCase().includes(lowerCaseQuery) ||
-        fullName.includes(lowerCaseQuery)
-      );
-    });
-  }
+  //   // Filtra gli utenti in base alla query
+  //   return usersWithToDo.filter((user) => {
+  //     const fullName = `${user.firstName.toLowerCase()} ${user.lastName.toLowerCase()}`;
+  //     return (
+  //       user.firstName.toLowerCase().includes(lowerCaseQuery) ||
+  //       user.lastName.toLowerCase().includes(lowerCaseQuery) ||
+  //       fullName.includes(lowerCaseQuery)
+  //     );
+  //   });
+  // }
 }

@@ -10,9 +10,6 @@ import { UsersService } from '../../service/users.service';
 })
 export class NavbarComponent {
   isVisible: boolean = false;
-  //i punti interr sono stati inseriti perchè noi inizialmente non abbiamo questi valori nei vari array, arrivano "dopo"...quando incrociamo i dati
-
-  constructor(private toDoSvc: TodosService, private usersSvc: UsersService) {}
 
   toggleNavbarB() {
     this.isVisible = !this.isVisible;
